@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--可以将js代码编写到外部js文件中，然后通过script标签引入
+        写到外部文件中可以在不同页面中同时引用，也可以利用到浏览器的缓存机制
+        推荐使用的方式-->
+
+    <!--
+        <script src="a01.js"></script>
+    -->
+    <!--
+        script标签一旦用于引入外部文件，就不能再编写代码了，即使编写浏览器也会忽略
+        如需要可以在创建一个新的script标签用于编写内部代码
+    -->
+    <script>
+        /*
+         *输出语句
+         */
+        alert("警示框");
+        document.write("向body中输出一个内容");
+        console.log("向控制台输出一个内容");
+        /*
+         *基本语法
+         *1.JS中严格区分大小写
+         *2.JS中每一条语句以分号（;）结尾
+         *        - 如果不写，浏览器会自动添加，但会消耗资源
+         *        - 且有些时候，浏览器会加错分号，使用开发中必须写
+         *3.JS中会忽略多个空格和换行，可以利用来进行代码的格式化
+         * 
+         * 
+         * 字面量：值不可变的常量
+         *          - 可以用但不方便
+         * 变量：可以用于保存字面量，且值可以改变
+         *          - 更方便使用
+         * 
+         * 声明变量
+         * 在js中使用var关键字来声明一个变量
+         * 
+         */
+        var a;
+        a = 123;
+        //var a = 123;
+        console.log(a);
+        /*
+         *可以用typeof检查变量类型
+         * 语法：typeof 变量
+         * 
+         * JS中可以表示数字的最大值
+         * Number.MAX_VALUE
+         * 如果使用Number表示的数字超过了最大值，则返回Infinity
+         *      表示正无穷
+         *      使用typeof检查Infinity返回Number
+         * NaN是一个特殊的数字，表示Not A Number
+         * Number.MIN_VALUE
+         *      最小正小数
+         * 如果使用JS进行浮点数运算，可能得到一个不精确的结果
+         * 
+         * Null类型的值只有null，用来表示一个为空的对象
+         *      检查返回object
+         * Undefined（未定义）类型的值只有Undefined，当声明一个变量但不给变量赋值时它的值就是Undefined
+         * 
+         */
+        console.log(typeof a);
+    </script>
+</head>
+
+<body>
+    <!--可以将js代码编写到标签的onclick属性中
+        点击按钮时执行-->
+    <button onclick="alert('完成点击')">复健2--js代码位置</button>
+    <!--可以将js代码写在超链接的href属性中，点击超链接时执行-->
+    <a href="javascript:alert('捏')">点击执行</a>
+    <a href="javascript:;">点击</a>
+    <!--虽然可以写在标签的属性中，但属于结构与行为耦合，不方便维护，故不推荐使用-->
+</body>
+
+</html>

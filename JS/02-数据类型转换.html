@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         *强制数据类型转换
+         */
+
+        /*
+         *将其他数据类型转换为String
+         *     方式一：调用toString()方法,该方法不会影响原变量
+         *              - 注意：null和undefinde这两个值没有toString，调用会报错
+         *     方式二：调用String()函数，以被转换数据为参数
+         *              - 在转换时，对于number和Boolean，实际上就是调用toString()
+         *                对于null和undefined，会将null直接转换为"null"
+         *                  undefinde直接转换为"undefinde"
+         * 
+         */
+        var num = 123;
+        var bool = true;
+        var nu = null;
+        var und = undefined;
+        var str = num.toString();
+        bool = bool.toString();
+
+        nu = String(nu);
+        und = String(und);
+
+        /*
+         *将其他数据类型转换为Number
+         *      方式一：使用Number()函数，用法同String()
+         *              字符串->数值
+         *                  纯数字字符串，直接转换；若有非数字内容，则转为NAN；若字符串为空串或全为空格，则转为0
+         *              布尔值->数值
+         *                  true转为1，false转为0
+         *              null->数值
+         *                  转为0
+         *              undefined->数值
+         *                  转为NAN
+         *      方式二：专门用于字符串转换
+         *              parseInt()  将字符串中有效整数取出来，然后转换为Number（即遇到第一个非数字后结束读取）
+         *              parseFloat()   获取有效小数
+         *              注意：对于非String类型使用parseInt()，会先将其转换为String然后再向Number进行转换
+         */
+        var a = "123";
+        a = Number(a);
+        a = parseInt(a);
+
+        /*
+         *其他进制数的表示：
+         *      16进制：以0x开头
+         *      8进制：以0开头
+         *      2进制：以0b开头，但不是所有浏览器都支持
+         *      类似“070”这种字符串，有些浏览器会当成八进制解析，有些浏览器会当成十进制解析
+         *      可以在pasreInt()中传递第二个参数来指定数字的进制
+         */
+        a = 0x10; //表示16
+        a = 070; //表示56
+        a = 0b10; //表示2
+        a = "070";
+        a = parseInt(a, 10); //以十进制解析
+
+        /*
+         *将其他数据类型转换为Boolean
+         *          使用Boolean()函数
+         *          数字转Boolean:除了0和NAN，其余都是true
+         *          字符串转Boolean:除了空串均为true
+         *          null 和 undefined 都会转为false
+         *          对象（object）也会转为true
+         */
+        a = 123;
+        a = Boolean(a);
+
+        console.log(typeof num);
+        console.log(num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

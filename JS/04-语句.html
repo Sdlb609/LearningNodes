@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         *prompt()可以弹出一个提示框，该提示框中会带有一个文本框
+         *      用户可以在文本框中输入一段内容,该函数需要一个字符串作为参数
+         *      该字符串将会作为提示框的提示文字
+         * 用户输入的内容会做为函数的返回值返回，可以定义一个变量来接受内容
+         */
+        var num = prompt("请输入一个数字：");
+        alert(num);
+        /*
+         *  编写程序，由键盘输入三个整数分别存入变量n1，n2，n3
+         *  对它们进行排序，并由小到大输出
+         */
+
+        //prompt()函数返回值为String类型，所以要进行类型转换
+
+        var n1 = +prompt("请输入n1：");
+        var n2 = +prompt("请输入n2：");
+        var n3 = +prompt("请输入n3：");
+        var t;
+        if(n1 > n2){
+            t = n1;
+            n1 = n2;
+            n2 = t;
+        }
+        if(n1 > n3){
+            t = n1;
+            n1 = n3;
+            n3 = t;
+        }
+        if(n2 > n3){
+            t = n2;
+            n2 = n3;
+            n3 = t;
+        }
+        alert("从小到大为：" + n1 + "," + n2 + "," + n3);
+
+        /*
+         *switch语句
+         *      switch(条件表达式){
+         *          case 表达式:
+         *              语句. . .
+         *              break;
+         *          case 表达式:
+         *              语句. . .
+         *              break;
+         *          deault:
+         *              语句. . .
+         *              break;
+         *      }
+         */
+        
+         //对于成绩不低于60分的输出及格，低于60的输出不及格
+
+         var score = 99;        //99/10=9.9,需要进行类型转换
+         switch(parseInt(score/10)){
+            case 10:
+            case 9:
+            case 8:
+            case 7:
+            case 6:
+                console.log("合格");
+                break;
+            default:
+                console.log("不合格");
+                break;
+         }
+         /*
+            switch(true){
+                case score >= 60:
+                    console.log("合格");
+                    break;
+                default:
+                    console.log("不合格")；
+                    break;
+            }
+         */
+
+         /*
+          *do...while循环
+          *     语法：
+          *         do{
+          *             语句...
+          *         }while(条件表达式)
+          * do...while可以保证循环套至少执行1次，while不会
+          */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

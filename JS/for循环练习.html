@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         *打印九九乘法表
+         */
+        for(var i = 1; i <=9; i++) {
+            for(var j = 1; j <= i; j++){
+                document.write("<span>" + j + "*" + i + "=" + i*j + "</span>");
+            }   //将每一个式子都添加span标签，方便统一样式
+            document.write("<br>");
+        }
+        /*
+         *可以为循环语句创建一个label，来标识当前的循环
+         *语法：       label:循环语句
+         *  可以在break后跟着一个label，用于结束指定的循环而非最近的
+         */
+        outer:
+        for(var i = 0; i < 5; i++){
+            console.log("外" + i);
+            for(var j = 0; j < 5; j++){
+                break outer;
+                console.log("内" + j);
+            }
+        }
+        
+        //console.time()函数可用于检测程序执行时间
+        //可以通过Math.sqrt()来对一个数进行开方
+    </script>
+    <style type="text/css">
+        span{
+            display: inline-block;      
+            width:80px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

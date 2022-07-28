@@ -93,6 +93,29 @@
             console.log(n);     //会依次输出属性名
             console.log(obj[n]);    //会依次输出属性值
          }
+        
+        /*
+          *使用工厂方法创建对象
+          *    使用该方法可以大批量创建对象
+          *    使用工厂方法创造的对象，使用的构造函数都是Object
+          *    所以创建的对象都是Object类型的
+          *    导致无法区分多种不同类型的对象
+          */
+         function Person(name, age, add){
+            //创建一个新的对象
+            var obje = new Object();
+            //向对象中添加属性
+            obje.name = name;
+            obje.age = age;
+            obje.add = add;
+            obj.getName = function(){
+               alert(this.name);
+            }
+            //将对象返回
+            return obje;
+         }
+         var obje2 = Person("张三", 18, "add1");
+         var obje3 = Person("李四", 28, "add2");
     </script>
 </head>
 <body>
